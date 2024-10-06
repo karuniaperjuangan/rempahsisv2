@@ -2,7 +2,6 @@
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:myapp/app/models/articles.dart';
-import 'package:myapp/app/modules/article_page/controllers/article_page_controller.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
@@ -20,7 +19,7 @@ class HomeController extends GetxController {
   
   void onTabTapped(int index){
     print(index);
-    this.currentIndex.value = index;
+    currentIndex.value = index;
   }
 
   void goToArticlePage(int index){

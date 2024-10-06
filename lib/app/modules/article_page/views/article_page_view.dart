@@ -16,10 +16,10 @@ class ArticlePageView extends GetView<ArticlePageController> {
       ),
       body: Center(
         child: Obx(() => SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Markdown(
-              data: controller.article_md.value,
+              data: controller.articleMarkdown.value,
               styleSheet: MarkdownStyleSheet(
                 textAlign: WrapAlignment.spaceEvenly,
                 h3Align: WrapAlignment.center,
