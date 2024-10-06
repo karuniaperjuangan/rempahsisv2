@@ -1,0 +1,62 @@
+[
+    {
+        "id": 0,
+        "title": "The Spice Islands, Kepulauan Rempah",
+        "image_url": "https://asset.kompas.com/crops/-5dWKa38C4HHj-dFPzYkF6hMIk8=/327x75:2568x1569/750x500/data/photo/2024/04/13/661a25123cc21.png",
+        "article_path": "assets/article_markdown/Kepulauan Rempah.md"
+    },
+    {
+        "id": 1,
+        "title": "Cabai Jawa, Rempah Pedas Asli Indonesia",
+        "image_url": "https://cdn-images.hipwee.com/wp-content/uploads/2021/01/hipwee-jawa1.jpg",
+        "article_path": "assets/article_markdown/CabaiJawa.md"
+    },
+    {
+        "id": 2,
+        "title": "Tordesillas dan Zaragoza, Dua Perjanjian Penentu",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/IberianMareClausum.svg/875px-IberianMareClausum.svg.png",
+        "article_path": "assets/article_markdown/Tordesillas.md"
+    },
+    {
+        "id": 3,
+        "title": "Jahe dan Lengkuas, Dua Rempah Asal Indonesia & Asia Tenggara",
+        "image_url": "https://asset.kompas.com/crops/MpuKFUoynTflQIit-1jaraUWhWg=/0x0:1920x1280/750x500/data/photo/2021/04/02/60667f1184ff7.jpg",
+        "article_path": "assets/article_markdown/JaheLengkuas.md"
+    },
+    {
+        "id": 4,
+        "title": "Aspek Religius dan Kultural dalam Perdagangan Rempah",
+        "image_url": "https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/01/16/2383477532.jpg",
+        "article_path": "assets/article_markdown/AspekReligius.md"
+    },
+    {
+        "id": 5,
+        "title": "Kejatuhan Malaka, Peristiwa Penting dalam Perdagangan Rempah",
+        "image_url": "https://akcdn.detik.net.id/visual/2021/06/04/kerajaan-malaka-kesultanan-malaka-1_169.jpeg?w=650",
+        "article_path": "assets/article_markdown/Malaka.md"
+    },
+    {
+        "id": 6,
+        "title": "Selat Muria, Salah Satu Penghubung Jalur Rempah",
+        "image_url": "https://i0.wp.com/betanews.id/wp-content/uploads/2021/12/20211121-Lipsus-Beta-News-Banjir-Muria-_-Ilustrasi-pegunungan-muria.jpg?fit=600%2C400&ssl=1",
+        "article_path": "assets/article_markdown/Selat Muria.md"
+    },
+    {
+        "id": 7,
+        "title": "Invasi Maluku, Kala Maluku Menjadi Bagian Imperium Britania",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Banda1810Cole.jpg/450px-Banda1810Cole.jpg",
+        "article_path": "assets/article_markdown/InvasiMaluku.md"
+    },
+    {
+        "id": 8,
+        "title": "Run, Pulau yang Ditukar",
+        "image_url": "https://www.islander.io/wp-content/uploads/wpallimport/files/places/output1150w/Run%20island.jpg",
+        "article_path": "assets/article_markdown/Run.md"
+    },
+    {
+        "id": 9,
+        "title": "Kemukus, Salah Satu Rempah Asal Indonesia",
+        "image_url": "https://sadabhumi.com/_next/image?url=https%3A%2F%2Fsadabhumi-cdn.sgp1.digitaloceanspaces.com%2Fcms%2F10a58687fa93b1a93bcff94e28f07aca.jpg&w=3840&q=75",
+        "article_path": "assets/article_markdown/Kemukus.md"
+    }
+]

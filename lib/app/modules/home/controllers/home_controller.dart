@@ -1,46 +1,41 @@
-import 'dart:convert';
 
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 import 'package:myapp/app/models/articles.dart';
+import 'package:myapp/app/modules/article_page/controllers/article_page_controller.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
-
-  final listArticle = <Article>[].obs;
-  final currentIndex = 0.obs;
+  HomeController():super();
+  
+  var currentIndex = 0.obs;
   var isLoading = false.obs;
   Future<List<Article>> fetchArticleList() async {
-    var response = await http.get(Uri.parse(
-        'https://www.clapeyronmedia.com/wp-json/wp/v2/posts?per_page=3'));
-    print(response.body);
-    if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
-      return articleFromJson(response.body);
-    } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
-      throw Exception('Failed to load album');
-    }
+    // Load from local assets assets/articles.json
+    String jsonString = await rootBundle.loadString('assets/articles.json');
+    return articleFromJson(jsonString);
   }
 
+  final listArticle = <Article>[].obs;
+  
   void onTabTapped(int index){
-    currentIndex.value = index;
+    print(index);
+    this.currentIndex.value = index;
   }
 
+  void goToArticlePage(int index){
+    //final ArticlePageController articlePageController = Get.find();
+    //articlePageController.article_id.value = index;
+    print(index);
+    Get.toNamed('/article-page', arguments: {'id': index});
+  }
   @override
   void onInit() async {
-    super.onInit();
-    // fetch articles JSON from API https://www.clapeyronmedia.com/wp-json/wp/v2/posts?per_page=3
-    // and store it in listArticle
     listArticle.value = await fetchArticleList();
+    super.onInit();
+    
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {}

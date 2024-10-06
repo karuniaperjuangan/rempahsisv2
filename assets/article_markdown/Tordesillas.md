@@ -1,0 +1,13 @@
+### Tordesillas dan Zaragoza, Dua Perjanjian Penentu
+
+![](https://upload.wikimedia.org/wikipedia/commons/e/e3/Iberian_mare_clausum_claims.svg)
+
+Pada waktu setelah Reconquista atas Andalusia, tepatnya pada akhir abad XV, dimulailah era penjelajahan samudera oleh dua imperium yang saat itu menguasai Semenanjung Iberia, Kerajaan Spanyol dan Kerajaan Portugal. Setelah Christopher Columbus menemukan tanah Hindia, tepatnya kepulauan di wilayah Karibia, yakni Kepulauan Canaria, Raja John II dari Portugal menyatakan bahwa tanah hasil penemuan Colombus itu menjadi milik Kerajaan Portugal berdasarkan Perjanjian Alcáçovas dan Æterni regis. Namun, hal tersebut tidak disetujui oleh Kerajaan Spanyol.
+
+Kerajaan Spanyol yang tidak setuju dengan klaim sepihak Portugal menggunakan jalur diplomatik untuk mengalahkan Portugal. Monarki Katolik itu mengirim utusan ke Vatikan untuk bertemu Paus. Paus Alexander VI akhirnya mengeluarkan piagam kepausan yang mendukung Spanyol. Namun, Portugal tetap tidak terima dan terus mengancam Spanyol. Akhirnya, perdebatan kedua monarki katolik itu berujung dengan ditandatanganinya Perjanjian Tordesillas di Tordesillas, Spanyol pada 7 Juni 1494. Perjanjian tersebut membagi wilayah kedua monarki berdasarkan garis bujur pada meridian 370 leagues dari sebelah barat Kepulauan Cape Verde dengan kekuasaan Spanyol di daerah barat, sedangkan kekuasaan Portugal di daerah timur. Garis tersebut dinamai sebagai Garis Demarkasi Kepausan yang disetujui oleh Paus Julius II pada tahun 1506.
+
+Garis demarkasi tersebut belum mempunyai garis antimeridiannya. Permasalahan terjadi di wilayah timur, tepatnya di Kepulauan Maluku yang terkenal sebagai penghasil rempah cengkih dan pala (rempah yang menjadi tujuan utama penjelajahan samudera). Sengketa kembali terjadi di antara dua monarki tersebut untuk menguasai monopoli rempah di wilayah Maluku. Sengketa tersebut berakhir dengan ditandatanganinya Perjanjian Zaragoza di Zaragoza, Aragon pada 22 April 1529 oleh Raja Charles V dari Spanyol dan Raja John III dari Portugal. Perjanjian itu menghasilkan batas timur pada meridian 297+ ½ leagues atau 17° timur Kepulauan Maluku yang membuat Spanyol berkuasa di antara Filipina hingga Meksiko, sedangkan Portugal berkuasa di antara Brasil hingga Maluku. Akhirnya, sengketa monopoli rempah di wilayah Maluku dimenangkan oleh Portugal, sedangkan Spanyol harus tersingkir ke wilayah Filipina.
+
+Referensi:
+- https://tirto.id/perjanjian-tordesillas-direstui-vatikan-dipicu-hasrat-penjajahan-ggzK
+- https://tirto.id/perjanjian-zaragoza-ketika-dunia-hanya-milik-spanyol-portugis-cHMA
