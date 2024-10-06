@@ -1,6 +1,6 @@
 ### Tordesillas dan Zaragoza, Dua Perjanjian Penentu
 
-![](https://upload.wikimedia.org/wikipedia/commons/e/e3/Iberian_mare_clausum_claims.svg)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/IberianMareClausum.svg/875px-IberianMareClausum.svg.png)
 
 Pada waktu setelah Reconquista atas Andalusia, tepatnya pada akhir abad XV, dimulailah era penjelajahan samudera oleh dua imperium yang saat itu menguasai Semenanjung Iberia, Kerajaan Spanyol dan Kerajaan Portugal. Setelah Christopher Columbus menemukan tanah Hindia, tepatnya kepulauan di wilayah Karibia, yakni Kepulauan Canaria, Raja John II dari Portugal menyatakan bahwa tanah hasil penemuan Colombus itu menjadi milik Kerajaan Portugal berdasarkan Perjanjian Alcáçovas dan Æterni regis. Namun, hal tersebut tidak disetujui oleh Kerajaan Spanyol.
 
