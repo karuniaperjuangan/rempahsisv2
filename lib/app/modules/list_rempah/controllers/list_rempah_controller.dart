@@ -1,16 +1,8 @@
-import 'dart:convert';
-import 'dart:io';
 import 'package:myapp/app/models/rempah.dart';
-import 'package:path_provider/path_provider.dart';
-
-import 'package:csv/csv.dart';
-import 'package:flutter/services.dart';
+import 'package:myapp/utils/fetch_rempah.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class ListRempahController extends GetxController {
-  //TODO: Implement ListRempahController
-
   final count = 0.obs;
   late Future future;
 
@@ -41,17 +33,4 @@ class ListRempahController extends GetxController {
   }
   void increment() => count.value++;
 
-  Future<List<Rempah>> loadRempahJSON(String path) async{
-    final asset = await rootBundle.loadString(path);
-    return rempahFromJson(asset);
-    }
-
-  Future<File> writeToFile(ByteData data) async {
-    final buffer = data.buffer;
-    Directory tempDir = await getTemporaryDirectory();
-    String tempPath = tempDir.path;
-    var filePath = '$tempPath/file_01.tmp'; // file_01.tmp is dump file, can be anything
-    return File(filePath).writeAsBytes(
-        buffer.asUint8List(data.offsetInBytes, data.lengthInBytes));
-  }
 }

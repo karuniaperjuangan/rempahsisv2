@@ -7,6 +7,7 @@ AppBar RempahSISAppbar() {
     elevation: 0,
     centerTitle: true,
     title: Row(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image(
@@ -15,7 +16,12 @@ AppBar RempahSISAppbar() {
         ),
         SizedBox(width: 10,),
         Text("REMPAHSIS", 
-        style: GoogleFonts.bebasNeue(fontSize: 24, color: Colors.white, fontWeight: FontWeight.w600)
+        style: GoogleFonts.bebasNeue(fontSize: 24, color: Colors.white, fontWeight: FontWeight.w600),
+                    textHeightBehavior: const TextHeightBehavior(
+              applyHeightToFirstAscent: true,
+              applyHeightToLastDescent: true,
+              leadingDistribution: TextLeadingDistribution.even,
+            ),
         )
       ],
     ),

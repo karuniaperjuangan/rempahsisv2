@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image/image.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:myapp/app/models/rempah.dart';
+import 'package:myapp/utils/fetch_rempah.dart';
 import 'package:onnxruntime/onnxruntime.dart';
 import 'dart:io';
 
@@ -12,21 +14,26 @@ class ImageScanController extends GetxController {
   final count = 0.obs;
   final imagePath = ''.obs;
   final classificationResult = ''.obs;
-
+  final classificationDescription = ''.obs;
   final ImagePicker _picker = ImagePicker();
 
 
   void increment() => count.value++;
 
-  Future<void> pickImage() async {
-    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+  Future<void> pickImage({bool fromCamera=false}) async {
+    final XFile? image = await _picker.pickImage(source: fromCamera ? ImageSource.camera : ImageSource.gallery);
+    final List<Rempah> rempahs = await loadRempahJSON('assets/rempah.json');
     if (image != null) {
       imagePath.value = image.path;
-      classifyImage(File(image.path));
+      final maxIndex = await classifyImage(File(image.path));
+      if (maxIndex != null) {
+        classificationResult.value = rempahs.firstWhere((element) => element.id == maxIndex).namaRempah;
+        classificationDescription.value = rempahs.firstWhere((element) => element.id == maxIndex).ikhtisar;
+      }
     }
   }
 
-    Future<void> classifyImage(File image) async {
+    Future<int?> classifyImage(File image) async {
     // Load the ONNX model from the assets folder
     const path = 'assets/best.onnx';
     final rawAssetFile = await rootBundle.load(path);
@@ -59,8 +66,9 @@ class ImageScanController extends GetxController {
     // If the maximum value in the output data is less than 0.4, the model is unsure
     final maxValue = outputData.reduce((a, b) => a > b ? a : b);
     if (maxValue < 0.4) {
-      classificationResult.value = 'Unsure';
-      return;
+      classificationResult.value = 'Rempah tidak terdeteksi';
+      classificationDescription.value = '';
+      return null;
     }
     // Get the index of the maximum value in the output data
     final maxIndex = outputData.indexWhere((element) => element == maxValue);
@@ -71,9 +79,7 @@ class ImageScanController extends GetxController {
     
     // Decode the JSON file to a map
     final Map<String, dynamic> map = jsonDecode(json);
-    
-    // Update the classification result with the label corresponding to the max index
-    classificationResult.value = map[maxIndex.toString()];
+    return map[maxIndex.toString()];
   }
   
   Future<List<double>> imageToFloatTensor(File image) async {

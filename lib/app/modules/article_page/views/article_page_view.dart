@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:get/get.dart';
+import 'package:myapp/app/components/appbar/rempah_sis_appbar.dart';
 
 import '../controllers/article_page_controller.dart';
 
@@ -11,9 +12,7 @@ class ArticlePageView extends GetView<ArticlePageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-      ),
+      appBar: RempahSISAppbar(),
       body: Center(
         child: Obx(() => SingleChildScrollView(
           child: SizedBox(

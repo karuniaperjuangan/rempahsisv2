@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/app/components/appbar/rempah_sis_appbar.dart';
 
 class AboutView extends GetView {

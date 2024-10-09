@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:get/get.dart';
+import 'package:myapp/app/components/appbar/rempah_sis_appbar.dart';
 
 import '../controllers/rempah_detail_controller.dart';
 
@@ -14,6 +15,7 @@ class RempahDetailView extends GetView<RempahDetailController> {
  @override
   Widget build(BuildContext context) => Scaffold(
       backgroundColor: Color(0xffF5F5F5),
+      appBar: RempahSISAppbar(),
       body: SingleChildScrollView(
         child: Obx(()=> Container(
                   decoration: BoxDecoration(

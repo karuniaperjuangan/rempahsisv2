@@ -13,6 +13,10 @@ void main() async {
       title: "Application",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      theme: ThemeData(
+        primarySwatch: Colors.brown,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
     ),
   );
 }
