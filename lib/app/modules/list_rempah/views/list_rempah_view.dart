@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:get/get.dart';
+import 'package:myapp/app/components/card/rempah_item_card.dart';
+import 'package:myapp/app/models/rempah.dart';
 
 import '../controllers/list_rempah_controller.dart';
 
@@ -9,7 +11,7 @@ class ListRempahView extends GetView<ListRempahController> {
   const ListRempahView({super.key});
 
   @override
-  Widget build(BuildContext buildContext) => Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       backgroundColor: Color(0xffE0E0E0),
       appBar:  AppBar(
           backgroundColor: Color(0xFFfdfdfd),
@@ -47,37 +49,7 @@ class ListRempahView extends GetView<ListRempahController> {
                       ? ListView.builder(
                       itemCount: controller.dataFilter.length,
                       itemBuilder: (context,index)
-                      => Container(
-                        decoration: BoxDecoration(boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
-                            blurRadius: 4,
-                            spreadRadius: -2,
-                          )
-                        ]),
-                        child: Card(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                            elevation: 0,
-                            margin: EdgeInsets.only(top: index == 0? 10: 0, bottom:10),
-                            child: MaterialButton(
-                              onPressed:(){
-                                Get.toNamed('/rempah-detail', arguments: {'id': controller.dataFilter[index].id});
-                                },
-                              child: ListTile(
-                                  title: Text(controller.dataFilter[index].namaRempah,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500),),
-                                  //Nama Ilmiah
-                                  subtitle: MarkdownBody(data: controller.dataFilter[index].namaIlmiah,
-                                    styleSheet: MarkdownStyleSheet(p: TextStyle(fontSize: 12,fontWeight: FontWeight.w300)),),
-
-                                  trailing: Icon(Icons.navigate_next, color: Colors.black,),
-                                  leading: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image(image: AssetImage('assets/images/rempah/'+controller.dataFilter[index].gambar), height: 45, width: 45, fit: BoxFit.fill,),
-                                  )
-                              ),
-                            )
-                        ),
-                      )
+                      => RempahItemCard(rempah: controller.dataFilter[index],)
                   )
                       :Center(
                       child: Column(
@@ -99,3 +71,4 @@ class ListRempahView extends GetView<ListRempahController> {
         ) ,
       ));
 }
+

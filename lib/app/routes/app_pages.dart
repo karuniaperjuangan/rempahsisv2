@@ -1,10 +1,11 @@
 import 'package:get/get.dart';
 
-
 import '../modules/article_page/bindings/article_page_binding.dart';
 import '../modules/article_page/views/article_page_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/image_scan/bindings/image_scan_binding.dart';
+import '../modules/image_scan/views/image_scan_view.dart';
 import '../modules/list_rempah/bindings/list_rempah_binding.dart';
 import '../modules/list_rempah/views/list_rempah_view.dart';
 import '../modules/rempah_detail/bindings/rempah_detail_binding.dart';
@@ -37,6 +38,11 @@ class AppPages {
       name: _Paths.REMPAH_DETAIL,
       page: () => const RempahDetailView(),
       binding: RempahDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.IMAGE_SCAN,
+      page: () => const ImageScanView(),
+      binding: ImageScanBinding(),
     ),
   ];
 }

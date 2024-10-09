@@ -6,7 +6,6 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:get/get.dart';
 
-import '../../../models/rempah.dart';
 import '../controllers/rempah_detail_controller.dart';
 
 class RempahDetailView extends GetView<RempahDetailController> {
@@ -14,16 +13,6 @@ class RempahDetailView extends GetView<RempahDetailController> {
 
  @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(
-        backgroundColor: Color(0xffF5F5F5),
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Get.back();
-          },
-        ),
-      ),
       backgroundColor: Color(0xffF5F5F5),
       body: SingleChildScrollView(
         child: Obx(()=> Container(

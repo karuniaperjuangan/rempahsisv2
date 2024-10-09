@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:myapp/app/modules/home/views/about_view.dart';
+import 'package:myapp/app/modules/image_scan/controllers/image_scan_controller.dart';
+import 'package:myapp/app/modules/image_scan/views/image_scan_view.dart';
 import 'package:myapp/app/modules/list_rempah/views/list_rempah_view.dart';
 import '../../list_rempah/controllers/list_rempah_controller.dart';
 import './landing_page_view.dart';
@@ -15,10 +17,11 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
   
   Get.put(ListRempahController());
+  Get.put(ImageScanController());
   var childrenComponets = [
     LandingPage(controller: controller),
     ListRempahView(),
-    Container(color: Colors.green,),
+    ImageScanView(),
     AboutView(),
   ];    
     return Scaffold(

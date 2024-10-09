@@ -15,7 +15,7 @@ class RempahDetailController extends GetxController {
   fetchRempah() async {
     // Load from local assets assets/articles.json
     String jsonString = await rootBundle.loadString('assets/rempah.json');
-    var rempah = rempahFromJson(jsonString)[rempahID.value];
+    var rempah = rempahFromJson(jsonString).firstWhere((element) => element.id == rempahID.value);
     return rempah;
   }
 

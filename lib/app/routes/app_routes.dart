@@ -7,6 +7,7 @@ abstract class Routes {
   static const LIST_REMPAH = _Paths.LIST_REMPAH;
   static const ARTICLE_PAGE = _Paths.ARTICLE_PAGE;
   static const REMPAH_DETAIL = _Paths.REMPAH_DETAIL;
+  static const IMAGE_SCAN = _Paths.IMAGE_SCAN;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const LIST_REMPAH = '/list-rempah';
   static const ARTICLE_PAGE = '/article-page';
   static const REMPAH_DETAIL = '/rempah-detail';
+  static const IMAGE_SCAN = '/image-scan';
 }

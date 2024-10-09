@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/app/components/appbar/rempah_sis_appbar.dart';
 
 class AboutView extends GetView {
   const AboutView({super.key});
@@ -9,12 +11,7 @@ class AboutView extends GetView {
  @override
   Widget build(BuildContext context) => Scaffold(
     backgroundColor: Color(0xffF5F5F5),
-    appBar:  AppBar(
-      backgroundColor: Color(0xFFfdfdfd),
-      elevation: 0,
-      centerTitle: true,
-      title: Image(image: AssetImage('assets/images/LogoPKM.png'))
-      ),
+    appBar: RempahSISAppbar(),
     body:  SingleChildScrollView(
       child: Container(
         margin: EdgeInsets.all(25),
@@ -81,5 +78,6 @@ class AboutView extends GetView {
           ),
     )
       );
-      
+
+ 
 }

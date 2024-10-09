@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:csv/csv.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ListRempahController extends GetxController {
   //TODO: Implement ListRempahController
@@ -14,13 +15,12 @@ class ListRempahController extends GetxController {
   late Future future;
 
   var isInitialized = false.obs;
-
+  final lastAccessedRempahs = <Rempah>[].obs;
   var dataRempah = <Rempah>[].obs;
 
   var dataFilter = <Rempah>[].obs;
   @override
   void onInit() async{
-    // TODO: implement onInit
     dataRempah.value = await loadRempahJSON('assets/rempah.json');
     dataFilter = dataRempah;
     super.onInit();
