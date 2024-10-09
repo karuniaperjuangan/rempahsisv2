@@ -6,6 +6,7 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:get/get.dart';
 import 'package:myapp/app/components/appbar/rempah_sis_appbar.dart';
+import 'package:myapp/app/constant/colors.dart';
 import 'package:myapp/utils/launch_url.dart';
 
 import '../controllers/rempah_detail_controller.dart';
@@ -167,7 +168,10 @@ class ExpandableInformation extends StatelessWidget {
                           onPressed: () {
                             referensi(context, ref);
                           },
-                          child: Text("Referensi")),
+                          child: Text(
+                            "Referensi",
+                            style: TextStyle(color: RempahSISColor.darkBrown),
+                          )),
                     ],
                   ),
                   MarkdownBody(

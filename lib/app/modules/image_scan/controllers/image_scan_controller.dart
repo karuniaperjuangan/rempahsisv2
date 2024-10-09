@@ -15,6 +15,7 @@ class ImageScanController extends GetxController {
   final classificationId = 0.obs;
   final classificationResult = ''.obs;
   final classificationDescription = ''.obs;
+  final isLoading = false.obs;
   final ImagePicker _picker = ImagePicker();
 
   void increment() => count.value++;
@@ -24,6 +25,7 @@ class ImageScanController extends GetxController {
         source: fromCamera ? ImageSource.camera : ImageSource.gallery);
     final List<Rempah> rempahs = await loadRempahJSON('assets/rempah.json');
     if (image != null) {
+      isLoading.value = true;
       imagePath.value = image.path;
       final maxIndex = await classifyImage(File(image.path));
       if (maxIndex != null) {
@@ -33,6 +35,7 @@ class ImageScanController extends GetxController {
         classificationDescription.value =
             rempahs.firstWhere((element) => element.id == maxIndex).ikhtisar;
       }
+      isLoading.value = false;
     }
   }
 
