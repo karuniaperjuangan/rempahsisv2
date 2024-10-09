@@ -10,7 +10,7 @@ class ListRempahView extends GetView<ListRempahController> {
   @override
   Widget build(BuildContext context) => Scaffold(
       backgroundColor: Color(0xffE0E0E0),
-      appBar:  AppBar(
+      appBar: AppBar(
           backgroundColor: Color(0xFFfdfdfd),
           elevation: 0,
           title: Container(
@@ -23,49 +23,58 @@ class ListRempahView extends GetView<ListRempahController> {
             child: TextField(
               decoration: InputDecoration(
                   fillColor: Colors.transparent,
-                  prefixIcon: Icon(Icons.search, size: 18,),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    size: 18,
+                  ),
                   hintText: "Cari...",
                   filled: true,
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                   enabledBorder: InputBorder.none),
-              style: TextStyle(color: Colors.grey[800],),
+              style: TextStyle(
+                color: Colors.grey[800],
+              ),
               onChanged: (value) => controller.filter(value),
               textAlignVertical: TextAlignVertical.center,
             ),
-          )
-
-
-      ),
-      body: Padding(padding: EdgeInsets.only(left: 15, right: 15),
-        child: Obx(()=>controller.isInitialized.value ? 
-        
-        Column(children: [
+          )),
+      body: Padding(
+        padding: EdgeInsets.only(left: 15, right: 15),
+        child: Obx(() => controller.isInitialized.value
+            ? Column(
+                children: [
                   //SizedBox(height: 20,),
-                   Expanded(child: controller.dataFilter.isNotEmpty
-                      ? ListView.builder(
-                      itemCount: controller.dataFilter.length,
-                      itemBuilder: (context,index)
-                      => RempahItemCard(rempah: controller.dataFilter[index],)
-                  )
-                      :Center(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Rempah tidak ditemukan",style: TextStyle(fontSize: 24,fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
-                            Text("☹",style: TextStyle(fontSize: 64),)]
-                      )
-                  )
-
-                  )
+                  Expanded(
+                      child: controller.dataFilter.isNotEmpty
+                          ? ListView.builder(
+                              itemCount: controller.dataFilter.length,
+                              itemBuilder: (context, index) => RempahItemCard(
+                                    rempah: controller.dataFilter[index],
+                                  ))
+                          : Center(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                  Text(
+                                    "Rempah tidak ditemukan",
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w500),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Text(
+                                    "☹",
+                                    style: TextStyle(fontSize: 64),
+                                  )
+                                ])))
                 ],
-                ): Column(
+              )
+            : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Center(child: CircularProgressIndicator()),
                 ],
-              )
-        ) ,
+              )),
       ));
 }
-

@@ -12,7 +12,7 @@ class ListRempahController extends GetxController {
 
   var dataFilter = <Rempah>[].obs;
   @override
-  void onInit() async{
+  void onInit() async {
     dataRempah.value = await loadRempahJSON('assets/rempah.json');
     dataFilter = dataRempah;
     super.onInit();
@@ -21,16 +21,17 @@ class ListRempahController extends GetxController {
 
   var hasil = <Rempah>[].obs;
   void filter(String kata) {
-    if(kata.isEmpty){
-      hasil.value =dataRempah;
+    if (kata.isEmpty) {
+      hasil.value = dataRempah;
+    } else {
+      hasil.value = dataRempah
+          .where((x) => x.namaRempah.toLowerCase().contains(kata))
+          .toList();
     }
-    else{
-      hasil.value = dataRempah.where((x) => x.namaRempah.toLowerCase().contains(kata)).toList();
-    }
-    
+
     dataFilter = hasil;
     print(dataFilter);
   }
-  void increment() => count.value++;
 
+  void increment() => count.value++;
 }

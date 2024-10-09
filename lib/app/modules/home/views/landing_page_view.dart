@@ -13,20 +13,20 @@ class LandingPage extends StatelessWidget {
   });
 
   final HomeController controller;
-  
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.topCenter,
       children: [
         Container(
-      color: Colors.white,
-    ),
-    Image.asset(
-      "assets/images/Motif.png",
-      width: MediaQuery.of(context).size.width,
-      fit: BoxFit.fitWidth,
-    ),
+          color: Colors.white,
+        ),
+        Image.asset(
+          "assets/images/Motif.png",
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.fitWidth,
+        ),
         Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -49,7 +49,9 @@ class LandingPage extends StatelessWidget {
                         offset: Offset(0, 1), // changes position of shadow
                       ),
                     ]),
-                child: FunFactContainer(controller: controller,),
+                child: FunFactContainer(
+                  controller: controller,
+                ),
               ),
               Container(
                 margin: EdgeInsets.fromLTRB(
@@ -67,11 +69,11 @@ class LandingPage extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.topCenter,
                     padding: const EdgeInsets.all(8.0),
-                    child: Obx(()=> Column(
-                      children: controller.listRempah
-                          .map((element) => RempahItemCard(rempah: element))
-                          .toList(),
-                    )),
+                    child: Obx(() => Column(
+                          children: controller.listRempah
+                              .map((element) => RempahItemCard(rempah: element))
+                              .toList(),
+                        )),
                   ),
                 ),
               )
@@ -90,20 +92,15 @@ class LandingPageHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      padding: EdgeInsets.fromLTRB(
-          0.05 * MediaQuery.of(context).size.width,
-          0,
-          0.05 * MediaQuery.of(context).size.width,
-          0),
+      padding: EdgeInsets.fromLTRB(0.05 * MediaQuery.of(context).size.width, 0,
+          0.05 * MediaQuery.of(context).size.width, 0),
       alignment: Alignment.centerLeft,
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 0.2,
       child: const Text(
         "Selamat datang,\nAyo mengenal rempah lebih dalam!",
         style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold),
+            color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -116,15 +113,13 @@ class ArticleCarouselHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Icon(Icons.info),
-          SizedBox(width: 5),
-          Center(child: Text("Artikel Mengenai Rempah")),
-          Expanded(child: Container()),
-          Center(child: Text("Lainnya"))
-        ]);
+    return Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+      Icon(Icons.info),
+      SizedBox(width: 5),
+      Center(child: Text("Artikel Mengenai Rempah")),
+      Expanded(child: Container()),
+      Center(child: Text("Lainnya"))
+    ]);
   }
 }
 
@@ -136,19 +131,14 @@ class LastAccessedHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(
-          0.05 * MediaQuery.of(context).size.width,
-          0,
-          0.05 * MediaQuery.of(context).size.width,
-          0),
+      margin: EdgeInsets.fromLTRB(0.05 * MediaQuery.of(context).size.width, 0,
+          0.05 * MediaQuery.of(context).size.width, 0),
       alignment: Alignment.centerLeft,
-      child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Icon(Icons.history),
-            SizedBox(width: 5),
-            Text("Rempah Terakses")
-          ]),
+      child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+        Icon(Icons.history),
+        SizedBox(width: 5),
+        Text("Rempah Terakses")
+      ]),
     );
   }
 }
@@ -171,8 +161,8 @@ class LastAccessedRempahCard extends StatelessWidget {
         )
       ]),
       child: Card(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           elevation: 0,
           margin: EdgeInsets.only(bottom: 10),
           child: MaterialButton(
@@ -180,17 +170,13 @@ class LastAccessedRempahCard extends StatelessWidget {
             child: ListTile(
                 title: Text(
                   "Nama Rempah",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 ),
                 //Nama Ilmiah
                 subtitle: MarkdownBody(
                   data: "Nama ilmiah",
                   styleSheet: MarkdownStyleSheet(
-                      p: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300)),
+                      p: TextStyle(fontSize: 12, fontWeight: FontWeight.w300)),
                 ),
                 trailing: Icon(
                   Icons.navigate_next,
@@ -199,8 +185,7 @@ class LastAccessedRempahCard extends StatelessWidget {
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image(
-                    image:
-                        AssetImage("assets/images/Motif.png"),
+                    image: AssetImage("assets/images/Motif.png"),
                     height: 45,
                     width: 45,
                     fit: BoxFit.fill,
@@ -223,74 +208,73 @@ class ArticlesCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Obx( ()=> Row(
-          children: controller.listArticle
-              .map((element) => GestureDetector(
-                onTap: () {
-                  controller.goToArticlePage(element.id);
-                },
-                child: Container(
-                      width: 150,
-                      height: 150,
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.5),
-                              spreadRadius: 1,
-                              blurRadius: 1,
-                              offset: const Offset(
-                                  0, 1), // changes position of shadow
-                            ),
-                          ]),
-                      child: Stack(
-                        alignment: Alignment.bottomLeft,
-                        children: [
-                          SizedBox.expand(
-                              child: Image.network(
-                            element.imageUrl,
-                            fit: BoxFit.cover,
-                          )),
-                          // Gradient Top to Bottom, Transparent to Black
-                          SizedBox.expand(
-                              child: DecoratedBox(
-                                  decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              stops: const [0.6, 1.0],
-                              colors: [
-                                Colors.transparent,
-                                Colors.black.withOpacity(0.7),
-                              ],
-                            ),
-                          ))),
-                          Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              element.title,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  shadows: [
-                                    Shadow(
-                                        color: Colors.black,
-                                        offset: Offset(0, 2),
-                                        blurRadius: 2)
-                                  ]),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-              ))
-              .toList(),
-        ))
-        );
+        child: Obx(() => Row(
+              children: controller.listArticle
+                  .map((element) => GestureDetector(
+                        onTap: () {
+                          controller.goToArticlePage(element.id);
+                        },
+                        child: Container(
+                          width: 150,
+                          height: 150,
+                          margin: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.5),
+                                  spreadRadius: 1,
+                                  blurRadius: 1,
+                                  offset: const Offset(
+                                      0, 1), // changes position of shadow
+                                ),
+                              ]),
+                          child: Stack(
+                            alignment: Alignment.bottomLeft,
+                            children: [
+                              SizedBox.expand(
+                                  child: Image.network(
+                                element.imageUrl,
+                                fit: BoxFit.cover,
+                              )),
+                              // Gradient Top to Bottom, Transparent to Black
+                              SizedBox.expand(
+                                  child: DecoratedBox(
+                                      decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  stops: const [0.6, 1.0],
+                                  colors: [
+                                    Colors.transparent,
+                                    Colors.black.withOpacity(0.7),
+                                  ],
+                                ),
+                              ))),
+                              Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  element.title,
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      shadows: [
+                                        Shadow(
+                                            color: Colors.black,
+                                            offset: Offset(0, 2),
+                                            blurRadius: 2)
+                                      ]),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ))
+                  .toList(),
+            )));
   }
 }
 
@@ -311,14 +295,13 @@ class FunFactContainer extends StatelessWidget {
             "Tahukah kamu?",
             textAlign: TextAlign.start,
           ),
-          Obx(()=>Text(
-            controller.funFactText.value,
-            style: TextStyle(fontSize: 13),
-            textAlign: TextAlign.justify,
-          )),
+          Obx(() => Text(
+                controller.funFactText.value,
+                style: TextStyle(fontSize: 13),
+                textAlign: TextAlign.justify,
+              )),
         ],
       ),
     );
   }
 }
-

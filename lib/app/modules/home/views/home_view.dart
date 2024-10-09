@@ -15,35 +15,33 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-  
-  Get.put(ListRempahController());
-  Get.put(ImageScanController());
-  var childrenComponets = [
-    LandingPage(controller: controller),
-    ListRempahView(),
-    ImageScanView(),
-    AboutView(),
-  ];    
+    Get.put(ListRempahController());
+    Get.put(ImageScanController());
+    var childrenComponets = [
+      LandingPage(controller: controller),
+      ListRempahView(),
+      ImageScanView(),
+      AboutView(),
+    ];
     return Scaffold(
-          backgroundColor: Colors.transparent,
-          body: Obx(() => childrenComponets[controller.currentIndex.value]),
-          bottomNavigationBar: Obx( ()=> BottomNavigationBar(
-      onTap: controller.onTabTapped,
-      currentIndex: controller.currentIndex.value,
-      unselectedItemColor: Color(0xffCE8D51),
-      selectedItemColor: Colors.black,
-      type: BottomNavigationBarType.fixed,
-      items: [
-        BottomNavigationBarItem(
-            icon: Icon(Icons.home), label: "Beranda"),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.menu), label: "Daftar"),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.photo_camera), label: "Scan"),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.more_vert), label: "Lainnya"),
-      ])),
-        );
+      backgroundColor: Colors.transparent,
+      body: Obx(() => childrenComponets[controller.currentIndex.value]),
+      bottomNavigationBar: Obx(() => BottomNavigationBar(
+              onTap: controller.onTabTapped,
+              currentIndex: controller.currentIndex.value,
+              unselectedItemColor: Color(0xffCE8D51),
+              selectedItemColor: Colors.black,
+              type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home), label: "Beranda"),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.menu), label: "Daftar"),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.photo_camera), label: "Scan"),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.more_vert), label: "Lainnya"),
+              ])),
+    );
   }
 }
-

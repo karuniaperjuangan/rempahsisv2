@@ -58,38 +58,41 @@ class ImageScanView extends GetView<ImageScanController> {
                   )),
             ),
             SizedBox(height: 20),
-            Obx(()=> controller.classificationDescription.isNotEmpty? ShadowedContainer(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    controller.classificationDescription.value,
-                    style: TextStyle(fontSize: 12),
-                    textAlign: TextAlign.justify,
-                  ),
-                  SizedBox(height: 10),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                      textStyle: TextStyle(
-                        fontSize: 12,
-                        color: RempahSISColor.darkBrown,
-                      ),
+            Obx(() => controller.classificationDescription.isNotEmpty
+                ? ShadowedContainer(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          controller.classificationDescription.value,
+                          style: TextStyle(fontSize: 12),
+                          textAlign: TextAlign.justify,
+                        ),
+                        SizedBox(height: 10),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              color: RempahSISColor.darkBrown,
+                            ),
+                          ),
+                          onPressed: () {
+                            Get.toNamed('/rempah-detail', arguments: {
+                              'id': controller.classificationId.value
+                            });
+                          },
+                          child: const Text('Lihat detail rempah',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: RempahSISColor.darkBrown,
+                                  fontWeight: FontWeight.bold)),
+                        )
+                      ],
                     ),
-                    onPressed: () {
-                      Get.toNamed('/rempah-detail', arguments: {'id': controller.classificationId.value});
-                    },
-                    child: const Text('Lihat detail rempah',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: RempahSISColor.darkBrown,
-                      fontWeight: FontWeight.bold
-                    )
-                  ),)
-                ],
-              ),
-            ):SizedBox()),
+                  )
+                : SizedBox()),
           ],
         ),
       ),
@@ -122,7 +125,8 @@ class ImageScanView extends GetView<ImageScanController> {
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.photo_library, color: Colors.brown[800]),
+                    leading:
+                        Icon(Icons.photo_library, color: Colors.brown[800]),
                     title: Text('Ambil dari Galeri',
                         style: TextStyle(
                           color: Colors.brown[800],

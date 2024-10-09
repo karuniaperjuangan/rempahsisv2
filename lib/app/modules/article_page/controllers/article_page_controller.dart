@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import '../../../models/articles.dart';
 
 class ArticlePageController extends GetxController {
-  //TODO: Implement ArticlePageController
-
   final articleID = 0.obs;
   final articleMarkdown = ''.obs;
   fetchArticle() async {
@@ -19,14 +17,13 @@ class ArticlePageController extends GetxController {
 
   final count = 0.obs;
   @override
-  void onInit() async{
+  void onInit() async {
     articleID.value = Get.arguments['id'];
     article.value = await fetchArticle();
-    articleMarkdown.value = await rootBundle.loadString(article.value.articlePath);
+    articleMarkdown.value =
+        await rootBundle.loadString(article.value.articlePath);
     super.onInit();
   }
-
-
 
   void increment() => count.value++;
 }
