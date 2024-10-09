@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:get/get.dart';
 import 'package:myapp/app/models/rempah.dart';
+import 'package:myapp/app/modules/home/controllers/home_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RempahItemCard extends StatelessWidget {
@@ -31,17 +32,15 @@ class RempahItemCard extends StatelessWidget {
             onPressed:()async{
               final prefs = await SharedPreferences.getInstance();
               final lastAccessedRempahNames = prefs.getStringList('lastAccessedRempahNames') ?? [];
-              if(!lastAccessedRempahNames.contains(rempah.namaRempah)){
-                lastAccessedRempahNames.forEach((element) {
-                  if(element == rempah.namaRempah){
-                    lastAccessedRempahNames.remove(element);
-                  }
-                });
+              if(lastAccessedRempahNames.contains(rempah.namaRempah)){
+                lastAccessedRempahNames.remove(rempah.namaRempah);
               }
               lastAccessedRempahNames.insert(0, rempah.namaRempah);
               if (lastAccessedRempahNames.length > 3) lastAccessedRempahNames.removeLast();
               // Filter to maximum 3 items
               prefs.setStringList('lastAccessedRempahNames', lastAccessedRempahNames);
+              final HomeController homeController = Get.find();
+              homeController.updateLastAccessedRempahs();
               Get.toNamed('/rempah-detail', arguments: {'id': rempah.id});
               },
             child: ListTile(
@@ -53,7 +52,7 @@ class RempahItemCard extends StatelessWidget {
                 trailing: Icon(Icons.navigate_next, color: Colors.black,),
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image(image: AssetImage('assets/images/rempah/'+rempah.gambar), height: 45, width: 45, fit: BoxFit.fill,),
+                  child: Image(image: AssetImage('assets/images/rempah/${rempah.gambar}'), height: 45, width: 45, fit: BoxFit.fill,),
                 )
             ),
           )

@@ -13,6 +13,7 @@ import 'dart:io';
 class ImageScanController extends GetxController {
   final count = 0.obs;
   final imagePath = ''.obs;
+  final classificationId = 0.obs;
   final classificationResult = ''.obs;
   final classificationDescription = ''.obs;
   final ImagePicker _picker = ImagePicker();
@@ -27,6 +28,7 @@ class ImageScanController extends GetxController {
       imagePath.value = image.path;
       final maxIndex = await classifyImage(File(image.path));
       if (maxIndex != null) {
+        classificationId.value = maxIndex;
         classificationResult.value = rempahs.firstWhere((element) => element.id == maxIndex).namaRempah;
         classificationDescription.value = rempahs.firstWhere((element) => element.id == maxIndex).ikhtisar;
       }
@@ -77,8 +79,14 @@ class ImageScanController extends GetxController {
     final rawAssetFile2 = await rootBundle.load('assets/rempahsis_model_map.json');
     final json = String.fromCharCodes(rawAssetFile2.buffer.asUint8List());
     
+  
     // Decode the JSON file to a map
     final Map<String, dynamic> map = jsonDecode(json);
+
+    //Release the resources
+    session.release();
+    runOptions.release();
+    inputOrt.release();
     return map[maxIndex.toString()];
   }
   

@@ -59,10 +59,35 @@ class ImageScanView extends GetView<ImageScanController> {
             ),
             SizedBox(height: 20),
             Obx(()=> controller.classificationDescription.isNotEmpty? ShadowedContainer(
-              child: Text(
-                controller.classificationDescription.value,
-                style: TextStyle(fontSize: 12),
-                textAlign: TextAlign.justify,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    controller.classificationDescription.value,
+                    style: TextStyle(fontSize: 12),
+                    textAlign: TextAlign.justify,
+                  ),
+                  SizedBox(height: 10),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      textStyle: TextStyle(
+                        fontSize: 12,
+                        color: RempahSISColor.darkBrown,
+                      ),
+                    ),
+                    onPressed: () {
+                      Get.toNamed('/rempah-detail', arguments: {'id': controller.classificationId.value});
+                    },
+                    child: const Text('Lihat detail rempah',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: RempahSISColor.darkBrown,
+                      fontWeight: FontWeight.bold
+                    )
+                  ),)
+                ],
               ),
             ):SizedBox()),
           ],
@@ -76,20 +101,32 @@ class ImageScanView extends GetView<ImageScanController> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
+            ),
             builder: (BuildContext context) {
               return Wrap(
                 children: <Widget>[
                   ListTile(
-                    leading: const Icon(Icons.camera_alt),
-                    title: const Text('Camera'),
+                    leading: Icon(Icons.camera_alt, color: Colors.brown[800]),
+                    title: Text('Gunakan Kamera',
+                        style: TextStyle(
+                          color: Colors.brown[800],
+                        )),
                     onTap: () {
                       Navigator.pop(context);
                       controller.pickImage(fromCamera: true);
                     },
                   ),
                   ListTile(
-                    leading: const Icon(Icons.photo_library),
-                    title: const Text('Gallery'),
+                    leading: Icon(Icons.photo_library, color: Colors.brown[800]),
+                    title: Text('Ambil dari Galeri',
+                        style: TextStyle(
+                          color: Colors.brown[800],
+                        )),
                     onTap: () {
                       Navigator.pop(context);
                       controller.pickImage(fromCamera: false);
