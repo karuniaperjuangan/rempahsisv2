@@ -36,7 +36,7 @@ class LandingPage extends StatelessWidget {
                 alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width * 0.9,
                 padding: EdgeInsets.all(12),
-                height: 100,
+                //height: 100,
                 //box with shadow
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -49,7 +49,7 @@ class LandingPage extends StatelessWidget {
                         offset: Offset(0, 1), // changes position of shadow
                       ),
                     ]),
-                child: FunFactContainer(),
+                child: FunFactContainer(controller: controller,),
               ),
               Container(
                 margin: EdgeInsets.fromLTRB(
@@ -62,8 +62,8 @@ class LandingPage extends StatelessWidget {
               ),
               ArticlesCarousel(controller: controller),
               LastAccessedHeader(),
-              SingleChildScrollView(
-                child: Expanded(
+              Expanded(
+                child: SingleChildScrollView(
                   child: Container(
                     alignment: Alignment.topCenter,
                     padding: const EdgeInsets.all(8.0),
@@ -121,7 +121,7 @@ class ArticleCarouselHeader extends StatelessWidget {
         children: [
           Icon(Icons.info),
           SizedBox(width: 5),
-          Center(child: Text("Informasi Mengenai Rempah")),
+          Center(child: Text("Artikel Mengenai Rempah")),
           Expanded(child: Container()),
           Center(child: Text("Lainnya"))
         ]);
@@ -297,11 +297,13 @@ class ArticlesCarousel extends StatelessWidget {
 class FunFactContainer extends StatelessWidget {
   const FunFactContainer({
     super.key,
+    required this.controller,
   });
 
+  final HomeController controller;
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -309,11 +311,11 @@ class FunFactContainer extends StatelessWidget {
             "Tahukah kamu?",
             textAlign: TextAlign.start,
           ),
-          Text(
-            "Jahe, lengkuas, kunyit, dan kencur memiliki bentuk yang mirip. Untuk membedakannya jahe memiliki ukuran yang paling besar diikuti oleh lengkuas, kunyit, lalu kencur.",
+          Obx(()=>Text(
+            controller.funFactText.value,
             style: TextStyle(fontSize: 13),
             textAlign: TextAlign.justify,
-          ),
+          )),
         ],
       ),
     );
