@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:myapp/app/models/rempah.dart';
+import 'package:rempahsisv2/app/models/rempah.dart';
 
 class RempahDetailController extends GetxController {
   final rempahID = 0.obs;

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:get/get.dart';
-import 'package:myapp/app/components/appbar/rempah_sis_appbar.dart';
-import 'package:myapp/app/constant/colors.dart';
-import 'package:myapp/utils/launch_url.dart';
+import 'package:rempahsisv2/app/components/appbar/rempah_sis_appbar.dart';
+import 'package:rempahsisv2/app/constant/colors.dart';
+import 'package:rempahsisv2/utils/launch_url.dart';
 
 import '../controllers/rempah_detail_controller.dart';
 
@@ -70,61 +70,59 @@ class RempahDetailView extends GetView<RempahDetailController> {
                                 ],
                               ),
                               SizedBox(height: 15),
-                              Container(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    //Ikhtisar
-                                    Row(
-                                      children: [
-                                        Flexible(
-                                          child: MarkdownBody(
-                                            data: controller
-                                                .rempah.value.ikhtisar,
-                                            styleSheet: MarkdownStyleSheet(
-                                                p: TextStyle(
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 12),
-                                                textAlign:
-                                                    WrapAlignment.spaceAround),
-                                          ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  //Ikhtisar
+                                  Row(
+                                    children: [
+                                      Flexible(
+                                        child: MarkdownBody(
+                                          data: controller
+                                              .rempah.value.ikhtisar,
+                                          styleSheet: MarkdownStyleSheet(
+                                              p: TextStyle(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 12),
+                                              textAlign:
+                                                  WrapAlignment.spaceAround),
                                         ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 15,
-                                    ),
-
-                                    SizedBox(
-                                      height: 15,
-                                    ),
-                                    ExpandableInformation(
-                                        title: "Morfologi",
-                                        info: controller.rempah.value.morfologi,
-                                        ref: controller
-                                            .rempah.value.referensiMorfologi),
-                                    ExpandableInformation(
-                                        title: "Ciri-Ciri",
-                                        info: controller.rempah.value.ciri,
-                                        ref: controller
-                                            .rempah.value.referensiCiri),
-                                    ExpandableInformation(
-                                        title: "Khasiat",
-                                        info: controller.rempah.value.khasiat,
-                                        ref: controller
-                                            .rempah.value.referensiKhasiat),
-                                    ExpandableInformation(
-                                        title: "Kegunaan",
-                                        info: controller.rempah.value.kegunaan,
-                                        ref: controller
-                                            .rempah.value.referensiKegunaan),
-                                    ExpandableInformation(
-                                        title: "Potensi",
-                                        info: controller.rempah.value.potensi,
-                                        ref: controller
-                                            .rempah.value.referensiPotensi),
-                                  ],
-                                ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                              
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  ExpandableInformation(
+                                      title: "Morfologi",
+                                      info: controller.rempah.value.morfologi,
+                                      ref: controller
+                                          .rempah.value.referensiMorfologi),
+                                  ExpandableInformation(
+                                      title: "Ciri-Ciri",
+                                      info: controller.rempah.value.ciri,
+                                      ref: controller
+                                          .rempah.value.referensiCiri),
+                                  ExpandableInformation(
+                                      title: "Khasiat",
+                                      info: controller.rempah.value.khasiat,
+                                      ref: controller
+                                          .rempah.value.referensiKhasiat),
+                                  ExpandableInformation(
+                                      title: "Kegunaan",
+                                      info: controller.rempah.value.kegunaan,
+                                      ref: controller
+                                          .rempah.value.referensiKegunaan),
+                                  ExpandableInformation(
+                                      title: "Potensi",
+                                      info: controller.rempah.value.potensi,
+                                      ref: controller
+                                          .rempah.value.referensiPotensi),
+                                ],
                               )
                             ])),
                   ],
@@ -150,12 +148,10 @@ class ExpandableInformation extends StatelessWidget {
               border: Border.all(color: Colors.grey.withOpacity(0.25)),
               borderRadius: BorderRadius.circular(5)),
           child: ExpandablePanel(
-              header: Container(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
-                  child: Text(
-                    title,
-                  ),
+              header: Padding(
+                padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
+                child: Text(
+                  title,
                 ),
               ),
               collapsed: SizedBox(),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:get/get.dart';
-import 'package:myapp/app/models/rempah.dart';
-import 'package:myapp/app/modules/home/controllers/home_controller.dart';
+import 'package:rempahsisv2/app/models/rempah.dart';
+import 'package:rempahsisv2/app/modules/home/controllers/home_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RempahItemCard extends StatelessWidget {

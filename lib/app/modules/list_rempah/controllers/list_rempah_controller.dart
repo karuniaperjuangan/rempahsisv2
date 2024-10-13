@@ -1,5 +1,5 @@
-import 'package:myapp/app/models/rempah.dart';
-import 'package:myapp/utils/fetch_rempah.dart';
+import 'package:rempahsisv2/app/models/rempah.dart';
+import 'package:rempahsisv2/utils/fetch_rempah.dart';
 import 'package:get/get.dart';
 
 class ListRempahController extends GetxController {

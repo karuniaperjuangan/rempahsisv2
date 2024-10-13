@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:myapp/app/components/card/rempah_item_card.dart';
-import 'package:myapp/app/models/rempah.dart';
+import 'package:rempahsisv2/app/components/card/rempah_item_card.dart';
+import 'package:rempahsisv2/app/constant/colors.dart';
+import 'package:rempahsisv2/app/models/rempah.dart';
 import '../controllers/home_controller.dart';
 
 import 'package:get/get.dart';
@@ -118,7 +119,24 @@ class ArticleCarouselHeader extends StatelessWidget {
       SizedBox(width: 5),
       Center(child: Text("Artikel Mengenai Rempah")),
       Expanded(child: Container()),
-      Center(child: Text("Lainnya"))
+      Center(
+          child: TextButton(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+                textStyle: TextStyle(
+                  fontSize: 12,
+                  color: RempahSISColor.darkBrown,
+                ),
+              ),
+              onPressed: () {
+                Get.toNamed('/article-list');
+              },
+              child: const Text('Lainnya',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: RempahSISColor.darkBrown,
+                      fontWeight: FontWeight.bold))))
     ]);
   }
 }
@@ -287,21 +305,19 @@ class FunFactContainer extends StatelessWidget {
   final HomeController controller;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Tahukah kamu?",
-            textAlign: TextAlign.start,
-          ),
-          Obx(() => Text(
-                controller.funFactText.value,
-                style: TextStyle(fontSize: 13),
-                textAlign: TextAlign.justify,
-              )),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Tahukah kamu?",
+          textAlign: TextAlign.start,
+        ),
+        Obx(() => Text(
+              controller.funFactText.value,
+              style: TextStyle(fontSize: 13),
+              textAlign: TextAlign.justify,
+            )),
+      ],
     );
   }
 }

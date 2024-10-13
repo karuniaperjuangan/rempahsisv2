@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image/image.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myapp/app/models/rempah.dart';
-import 'package:myapp/utils/fetch_rempah.dart';
+import 'package:rempahsisv2/app/models/rempah.dart';
+import 'package:rempahsisv2/utils/fetch_rempah.dart';
 import 'package:onnxruntime/onnxruntime.dart';
 import 'dart:io';
 

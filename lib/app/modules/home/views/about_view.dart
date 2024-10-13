@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:myapp/app/components/appbar/rempah_sis_appbar.dart';
+import 'package:rempahsisv2/app/components/appbar/rempah_sis_appbar.dart';
 
 class AboutView extends GetView {
   const AboutView({super.key});

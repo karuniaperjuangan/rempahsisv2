@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:myapp/app/components/appbar/rempah_sis_appbar.dart';
-import 'package:myapp/app/constant/colors.dart';
+import 'package:rempahsisv2/app/components/appbar/rempah_sis_appbar.dart';
+import 'package:rempahsisv2/app/constant/colors.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../controllers/image_scan_controller.dart';

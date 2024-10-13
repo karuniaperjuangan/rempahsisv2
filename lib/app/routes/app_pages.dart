@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/article_list/bindings/article_list_binding.dart';
+import '../modules/article_list/views/article_list_view.dart';
 import '../modules/article_page/bindings/article_page_binding.dart';
 import '../modules/article_page/views/article_page_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.IMAGE_SCAN,
       page: () => const ImageScanView(),
       binding: ImageScanBinding(),
+    ),
+    GetPage(
+      name: _Paths.ARTICLE_LIST,
+      page: () => const ArticleListView(),
+      binding: ArticleListBinding(),
     ),
   ];
 }

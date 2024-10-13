@@ -3,12 +3,12 @@ import 'dart:math';
 
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:myapp/app/models/articles.dart';
-import 'package:myapp/app/models/rempah.dart';
+import 'package:rempahsisv2/app/models/articles.dart';
+import 'package:rempahsisv2/app/models/rempah.dart';
+import 'package:rempahsisv2/utils/fetch_rempah.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
   HomeController() : super();
   final currentIndex = 0.obs;
   final isLoading = false.obs;
@@ -20,10 +20,6 @@ class HomeController extends GetxController {
     return articleFromJson(jsonString);
   }
 
-  Future<List<Rempah>> loadRempahJSON(String path) async {
-    final asset = await rootBundle.loadString(path);
-    return rempahFromJson(asset);
-  }
 
   final listArticle = <Article>[].obs;
 

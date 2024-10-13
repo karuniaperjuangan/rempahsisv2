@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myapp/app/components/card/rempah_item_card.dart';
+import 'package:rempahsisv2/app/components/card/rempah_item_card.dart';
 
 import '../controllers/list_rempah_controller.dart';
 
