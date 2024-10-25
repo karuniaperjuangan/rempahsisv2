@@ -16,13 +16,13 @@ Rempah SIS, "Scanner of Indonesian Spices", is an application about spices devel
 
 <div style="display: flex; justify-content: space-around;">
 
-![Example 1](docs/ss1.png)
+![Example 1](docs/1.png)
 
-![Example 2](docs/ss2.png)
+![Example 2](docs/2.png)
 
-![Example 3](docs/ss3.png)
+![Example 3](docs/3.png)
 
-![Example 4](docs/ss3.png)
+![Example 4](docs/4.png)
 </div>
 
 ### Cloning the Repository
