@@ -1,16 +1,34 @@
-# rempahsisv2
+<div align="center">
+<h1>
+RempahSIS
+</h1>
+</div>
+Rempah SIS, "Scanner of Indonesian Spices", is an application about spices developed by the PKM Rempah SIS team from UGM as a result of participation in the 2021 Student Creativity Program (PKM) which functions as the app to identify the kind of spices from the scanned images. In addition, this application also provides various additional information about these spices that can enrich your insight.
 
-A new Flutter project.
+## Tech Stack
 
-## Getting Started
+<div syle="display: flex; justify-content: space-around;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png" alt="Flutter" style="height: 50px;"/>&nbsp;
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/ONNX_logo_main.png" alt="ONNX Runtime" style="height: 50px;"/>
+</div>
 
-This project is a starting point for a Flutter application.
+### Cloning the Repository
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/karuniaperjuangan/rempahsisv2.git
+cd rempahsisv2
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Build The Application
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Install the required libraries
+
+```bash
+flutter pub get
+```
+
+2. Build the app
+
+```bash
+flutter build apk
+```

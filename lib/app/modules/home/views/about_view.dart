@@ -116,7 +116,7 @@ class AboutView extends GetView {
                 height: 12,
               ),
               Row(
-                children: [Flexible(child: Text("089618628853 (Gopay/OVO)"))],
+                children: [Flexible(child: Text("0858903037777 (Gopay/OVO)"))],
               ),
             ],
           ),
