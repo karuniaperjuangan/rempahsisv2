@@ -12,6 +12,19 @@ Rempah SIS, "Scanner of Indonesian Spices", is an application about spices devel
 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/ONNX_logo_main.png" alt="ONNX Runtime" style="height: 50px;"/>
 </div>
 
+## Screenshot
+
+<div style="display: flex; justify-content: space-around;">
+
+![Example 1](docs/ss1.png)
+
+![Example 2](docs/ss2.png)
+
+![Example 3](docs/ss3.png)
+
+![Example 4](docs/ss3.png)
+</div>
+
 ### Cloning the Repository
 
 ```bash
